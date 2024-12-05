@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Will You Go on a Date With Me?</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #ff7eb9, #ffb6c1);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+            color: #fff;
+            overflow: hidden;
+        }
+
+        .container {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 40px;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+        }
+
+        .buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .button {
+            padding: 15px 25px;
+            font-size: 1.2rem;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        .button-yes {
+            background-color: #ff4b5c;
+            color: white;
+        }
+
+        .button-no {
+            background-color: #4caf50;
+            color: white;
+        }
+
+        .button:hover {
+            transform: translateY(-3px);
+        }
+
+        .button-yes:hover {
+            background-color: #ff3a4f;
+        }
+
+        .button-no:hover {
+            background-color: #45a049;
+        }
+
+        .heart {
+            font-size: 3rem;
+            color: #ff4b5c;
+            margin-top: 20px;
+            animation: heart-beat 1.5s infinite;
+        }
+
+        @keyframes heart-beat {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.2);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Hi Jenny</h1>
+        <h1>Gala tayo bukas? hahahaha</h1>
+        <p>Click the button below that feels right!</p>
+        <div class="buttons">
+            <button class="button button-yes" onclick="showResponse('Yes')">Yes</button>
+            <button class="button button-no" onclick="showResponse('No')">No</button>
+        </div>
+        <div id="response" class="heart"></div>
+    </div>
+
+    <script>
+        function showResponse(answer) {
+            const responseDiv = document.getElementById('response');
+            if (answer === 'Yes') {
+                responseDiv.innerHTML = '❤️ Yay! I am so happy!';
+                responseDiv.style.color = '#ff4b5c';
+                responseDiv.style.animation = 'none'; // Stops the animation after response
+            } else {
+                responseDiv.innerHTML = 'Oh, that\'s okay!';
+                responseDiv.style.color = '#4caf50';
+                responseDiv.style.animation = 'none'; // Stops the animation after response
+            }
+        }
+    </script>
+
+</body>
+</html>
